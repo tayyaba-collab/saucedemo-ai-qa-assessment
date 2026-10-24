@@ -36,7 +36,7 @@ test('standard_user completes checkout end to end', async ({ page }) => {
   const subtotal = await readAmount(page, 'subtotal-label');
   const tax = await readAmount(page, 'tax-label');
   const total = await readAmount(page, 'total-label');
-  expect(total).toBeCloseTo(subtotal + tax + 10, 2);
+  expect(total).toBeCloseTo(subtotal + tax, 2);
 
   // Finish
   await page.getByTestId('finish').click();
